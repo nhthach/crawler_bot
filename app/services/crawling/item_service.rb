@@ -37,7 +37,7 @@ module Crawling
       return if response.nil?
 
       content = rbody.content
-      short_content = Nokogiri::HTML(content).text.gsub(/[\r\n\t\s]+/, ' ')
+      short_content = Nokogiri::HTML(content).text.gsub(/[\r\n\t\s]+/, '')
 
       data[:content] = content
       data[:short_content] = short_content.truncate(Settings.article.short_content.length, separator: /\s/)

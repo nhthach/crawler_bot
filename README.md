@@ -1,8 +1,8 @@
 # 💎 Crawler Bot App
 
-[![Ruby](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml)
+[![Ruby](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml/badge.svg)](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml)
 
-App: https://crawler-bot.herokuapp.com/
+Heroku app: https://crawler-bot-lucas.herokuapp.com/
 
 This is sample project that crawling the latest best news and show them.
 
