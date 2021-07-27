@@ -1,0 +1,25 @@
+# This is rubocop configuration file for Framgia's coding style. Enabling and disabling is configured
+# in separate files. This file adds all other parameters apart from Enabled.
+
+require: rubocop-rails
+
+inherit_from:
+  - .rubocop_disabled.yml
+
+# Common configuration.
+AllCops:
+  # Include gemspec and Rakefile
+  Include:
+    - '**/*.rb'
+    - '**/*.gemspec'
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'vendor/**/*'
+    - 'config/unicorn.rb'
+    - 'bin/*'
+    - 'db/*'
+    - 'spec/*'
+    - 'config/**/*'
+  SuggestExtensions: false
+  NewCops: enable

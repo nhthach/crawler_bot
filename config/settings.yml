@@ -1,0 +1,12 @@
+target:
+  url: https://news.ycombinator.com/best
+article:
+  image:
+    default: "images/no-image.png"
+  short_content:
+    length: 100
+redis:
+  url: <%= ENV["REDIS_URL"] %>
+  namespace: "crawler-news-redis"
+  key:
+    article: "articles"

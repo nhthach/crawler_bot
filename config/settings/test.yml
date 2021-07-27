@@ -1,0 +1,4 @@
+target:
+  url: https://example.com
+redis:
+  url: "redis-sample"

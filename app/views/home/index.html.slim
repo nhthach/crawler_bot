@@ -1,0 +1,10 @@
+.header.w-full.container.mx-auto
+  .flex.flex-col.items-center.py-12
+    a.font-bold.text-gray-800.uppercase.hover:text-gray-700.text-5xl[href="#"]
+      |  Best News
+    p.text-lg.text-gray-600
+      | Test assigment
+
+#app.container.bg-white.mx-auto.max-w-screen-xl
+  = render partial: 'home/articles'
+  = render partial: 'home/post'

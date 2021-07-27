@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new Settings.redis.namespace, :redis => Redis.new

@@ -1,0 +1,42 @@
+{
+  "name": "CrawlerBot",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
+  },
+  "env": {
+    "LANG": "en_US.UTF-8",
+    "HEROKU_APP_NAME": {
+      "description": "Fill in exactly same name with App name above",
+      "required": true
+    },
+    "RAILS_ENV": {
+      "description": "To enable env, make sure to set `production`",
+      "required": true,
+      "value": "production"
+    },
+    "SECRET_KEY_BASE": {
+      "description": "Generate secret key base by `rails secret`",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "jawsdb:kitefin",
+      "options": {
+        "version": "5.7"
+      }
+    },
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "stack": "heroku-18"
+}

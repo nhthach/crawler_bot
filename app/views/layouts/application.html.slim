@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | CrawlerNews
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = javascript_pack_tag 'application'
+    = stylesheet_pack_tag 'application'
+  body
+    .flex.flex-col.h-screen
+      = render partial: "layouts/header"
+      .main.flex-grow
+        = yield
+      = render partial: "layouts/footer"

@@ -1,0 +1,58 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.0.0']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 3.0.0
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Run rubocop
+        run:
+          bundle exec rubocop app/
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.0.0']
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_DB: github_actions_test
+          MYSQL_USER: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_PASSWORD: password
+        ports:
+          - "3306:3306"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 3.0.0
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+          DATABASE_PORT: 3306
+          DATABASE_USERNAME: root
+          DATABASE_PASSWORD: password
+          DATABASE_HOSTNAME: 127.0.0.1
+        run:
+          sudo service mysql start
+          bundle exec rails db:create
+          bundle exec rspec
