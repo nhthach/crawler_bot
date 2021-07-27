@@ -1,3 +1,6 @@
+import Services from "./services";
+import Helper from "./helper";
+
 export default class PostController {
     constructor(config) {
         this.config = config;

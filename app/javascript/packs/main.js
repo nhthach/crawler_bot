@@ -15,23 +15,8 @@ class App {
                 onMounted: (ins) => {
                     document.getElementById('js-load-more-article')
                         .addEventListener('click', function (){
-                        ins.stream();
-                    });
-
-                    // Continue load new articles when at the bottom of page
-                    window.onscroll = function() {
-                        var docElm = document.documentElement;
-                        var scrollTop = docElm.scrollTop;
-                        var offset = docElm.scrollTop + window.innerHeight;
-                        var height = docElm.offsetHeight;
-                        if (scrollTop > 0) {
-                            docElm.setAttribute('scroll-top', scrollTop);
-                        }
-
-                        if (offset >= height) {
                             ins.stream();
-                        }
-                    };
+                        });
                 },
                 onLoading: () => {
                     let loadingButton = document.getElementById('js-load-more-article');

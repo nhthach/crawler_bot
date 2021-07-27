@@ -2,7 +2,7 @@
 
 [![Ruby](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml/badge.svg)](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml)
 
-Heroku app: https://crawler-bot-lucas.herokuapp.com/
+Heroku app: https://crawlerbot-lucas.herokuapp.com/
 
 This is sample project that crawling the latest best news and show them.
 
@@ -75,5 +75,5 @@ Some main gems such as:
     ```
 
 ### 🎁 How to work
-1. You can run rake task by manual: ` rails scheduler:crawling`
+1. You can run rake task by manual: `rails scheduler:crawling`
 2. Access `http://localhost:3000/`. Let's enjoy the result :)
