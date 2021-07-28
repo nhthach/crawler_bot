@@ -45,7 +45,7 @@ module Crawling
     end
 
     def fetch_images
-      rbody.images.presence || ["#{Settings.base_url}#{ActionController::Base.helpers.asset_url('no-image.png')}"]
+      rbody.images.presence || ["#{Settings.base_url}/no-image.png"]
     end
 
     def rbody
