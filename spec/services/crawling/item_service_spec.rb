@@ -58,7 +58,7 @@ RSpec.describe Crawling::ItemService, type: :service do
         it "should return right value" do
           expect(@result[:content]).to eq mock_http_response[:content]
           expect(@result[:short_content]).to eq "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
-          expect(@result[:image]).to eq ActionController::Base.helpers.asset_url('no-image.png')
+          expect(@result[:image]).to eq "/no-image.png"
         end
       end
     end
