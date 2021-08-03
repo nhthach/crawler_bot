@@ -2,7 +2,7 @@
 
 [![Ruby](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml/badge.svg)](https://github.com/nhthach/crawler_bot/actions/workflows/ruby.yml)
 
-Heroku app: https://crawlerbot-lucas.herokuapp.com/
+Heroku app: TBD(To be determined)
 
 This is sample project that crawling the latest best news and show them.
 
@@ -11,6 +11,7 @@ This is sample project that crawling the latest best news and show them.
 - Bundler version 2.2.3
 - Rails version 6.1.X
 - Mysql
+- Tailwindcss
 
 
 ### Dependencies
